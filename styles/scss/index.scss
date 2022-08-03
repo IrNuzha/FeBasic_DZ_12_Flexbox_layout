@@ -1,0 +1,388 @@
+@import './font_faces';
+@import './reset';
+@import './variables';
+@import './txt';
+@import './common';
+
+html,
+body {
+    min-height: 100%;
+}
+
+body {
+    font-family: 'Graphik LCG', sans-serif;
+}
+
+/* header */
+
+.header {
+    min-height: 95px;
+    border-bottom: 1px solid #CCCCCC;
+    position: sticky;
+    top: 0;
+    background-color: var(--white);
+
+    &__container {
+        max-width: calc(1338px + $container-space * 2);
+        margin: 0 auto;
+        padding: 20px 20px 0 20px;
+    }
+
+    &__nav-container {
+        max-width: 1157px;
+        width: 100%;
+    }
+
+    &__nav {
+        gap: 42px;
+        padding-top: 5px;
+    }
+
+    &__link {
+        border-bottom: 3px solid transparent;
+        transition: border-bottom-color $transition;
+
+        &:hover {
+            border-bottom-color: var(--red_400);
+        }
+    }
+
+    &__btn-box {
+        max-width: 250px;
+        width: 100%;
+
+        :first-child {
+            background-color: transparent;
+        }
+    }
+
+    &__btn {
+        max-width: 120px;
+        width: 100%;
+        min-height: 45px;
+        transition: $transition;
+        margin: 5px 0;
+        font-weight: 600;
+        font-size: 16px;
+
+        &:hover {
+            box-shadow: 7px 3px 3px 3px #e3cccc;
+        }
+    }
+}
+
+/* end header */
+
+/* main */
+
+.main {
+    min-height: calc(100vh - 95px);
+    background-color: var(--white);
+
+    &__box {
+        min-height: calc(100vh - 95px);
+    }
+
+    .h6 {
+        padding: 51px 0 50px;
+    }
+
+    &__txt {
+        max-width: 531px;
+    }
+
+    &__btn-box {
+        max-width: 330px;
+        padding-bottom: 25px;
+    }
+}
+
+/* end main */
+
+/* section customers */
+
+.customer {
+    min-height: 455px;
+    background-color: var(--red_400);
+
+    &__box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 455px;
+    }
+
+    &__companies {
+        padding-top: 70px;
+    }
+
+    &__companies-img {
+        padding-right: 10px;
+    }
+}
+
+/* end section customers */
+
+/* section instruction */
+
+.instruction {
+    &__control {
+        padding-top: calc(90px - 20px);
+    }
+
+    &__less-work {
+        padding-bottom: 150px;
+    }
+}
+
+/* end section instruction */
+
+/* section purpose */
+
+.purpose {
+    background-color: var(--pink_50);
+    min-height: calc(100vh - 95px);
+
+    &__container {
+        min-height: 702px;
+        flex-direction: column;
+
+        & :last-child {
+            padding-bottom: 57px;
+        }
+    }
+}
+
+/* end section purpose */
+
+/* section productivity */
+
+.productivity {
+    min-height: calc(100vh - 95px);
+
+    &__box {
+        max-width: 409px;
+        padding-bottom: 120px;
+    }
+
+    &__box-txt {
+        min-height: 240px;
+        height: 100%;
+        padding: 34px 0 25px;
+    }
+
+    &__box-img {
+        min-height: 204px;
+        height: 100%;
+        margin-bottom: 46px;
+        display: flex;
+        align-items: center;
+    }
+
+    &__link {
+        border-bottom: 3px solid transparent;
+        transition: border-bottom-color $transition;
+
+        &:hover {
+            border-bottom-color: var(--red_400);
+        }
+    }
+}
+
+/* end section productivity */
+
+/* section review */
+
+.review {
+    background-color: var(--blue_200);
+    min-height: 468px;
+
+    .container {
+        min-height: 468px;
+        display: flex;
+        align-items: center;
+    }
+
+    &__box {
+        width: 100%;
+        display: flex;
+        justify-content: space-between
+    }
+
+    &__h5 {
+        @include txt (normal, 30px, 40px);
+        padding-bottom: 23px;
+    }
+
+    &__txt {
+        max-width: 921px;
+        margin-bottom: 20px;
+    }
+}
+
+/* end section review */
+
+/* section popularity */
+
+.popularity {
+    background-color: var(--brown_200);
+    min-height: 332px;
+
+    &__container {
+        display: flex;
+        min-height: 332px;
+    }
+
+    &__box {
+        padding: 30px 62px 22px 71px;
+        min-height: 168px;
+        max-width: 481px;
+        width: 100%;
+        border-left: 1px solid var(--black);
+    }
+
+    &__box-txt {
+        max-width: 150px;
+
+        & :nth-child(2) {
+            padding: 20px 0 14px;
+        }
+    }
+}
+
+/* end section popularity */
+
+/* work-tools */
+
+.work-tools {
+    min-height: calc(100vh - 95px);
+
+    &__container {
+        min-height: calc(100vh - 95px);
+        flex-direction: column;
+        padding-bottom: 20px;
+
+        & :first-child {
+            text-align: center;
+        }
+
+        & :nth-child(2) {
+            text-align: center;
+        }
+    }
+
+    &__img {
+        padding: 25px 0 32px;
+    }
+
+    &__btn {
+        max-width: 193px;
+        width: 100%;
+        min-height: 60px;
+        height: 100%;
+        transition: $transition;
+
+        &:hover {
+            box-shadow: 7px 3px 3px 3px #e3cccc;
+        }
+    }
+}
+
+/* end work-tools */
+
+/* easy section */
+
+.easy {
+    background-color: var(--red_400);
+    min-height: 603px;
+
+    &__box {
+        min-height: 603px;
+        flex-direction: column;
+    }
+
+    &__txt {
+        text-align: center;
+        padding-bottom: 29px;
+    }
+
+    &__btn {
+        max-width: 160px;
+        width: 100%;
+        min-height: 60px;
+        height: 100%;
+        background-color: var(--black);
+        color: var(--white);
+        transition: $transition;
+        margin-top: 54px;
+
+        &:hover {
+            box-shadow: 7px 3px 3px 3px #e3cccc;
+        }
+    }
+}
+
+/* end easy section */
+
+/* footer */
+
+.footer {
+    background-color: var(--deep_purple_50);
+    min-height: 900px;
+
+    &__container {
+        min-height: 900px;
+    }
+
+    &__studies {
+        max-width: 300px;
+    }
+
+    &__studies-img {
+        padding: 28px 0 31px;
+    }
+
+    &__studies-txt {
+        padding: 11px 0 15px;
+    }
+
+    &__links {
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px
+    }
+
+    &__contents {
+        @include txt (600, 20px, 25px);
+        padding-bottom: 21px;
+    }
+
+}
+
+.footer-top {
+    min-height: calc(682px + 92px);
+    padding-top: 92px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--black);
+}
+
+.footer-nav {
+    gap: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-bottom {
+    min-height: 106px;
+
+    & :first-child {
+        display: flex;
+    }
+}
+
+.footer-txt {
+    padding-left: 14px;
+}
+
+/* end footer */
