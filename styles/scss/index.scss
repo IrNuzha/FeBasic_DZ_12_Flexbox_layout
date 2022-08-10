@@ -28,6 +28,15 @@ body {
         padding: 20px 20px 0 20px;
     }
 
+    &-img {
+        border-bottom: 3px solid transparent;
+        transition: border-bottom-color $transition;
+
+        &:hover {
+            border-bottom-color: var(--red_400);
+        }
+    }
+
     &__nav-container {
         max-width: 1157px;
         width: 100%;
@@ -50,15 +59,22 @@ body {
     &__btn-box {
         max-width: 250px;
         width: 100%;
+        margin-right: $container-space;
 
         :first-child {
             background-color: transparent;
+            padding: 0 34px 0 34px;
+        }
+
+        :last-child {
+            padding: 0 24px 0 24px;
+            background-color: var(--deer_orange_400);
+            color: var(--white);
+            border: none;
         }
     }
 
     &__btn {
-        max-width: 120px;
-        width: 100%;
         min-height: 45px;
         transition: $transition;
         margin: 5px 0;
@@ -76,26 +92,60 @@ body {
 /* main */
 
 .main {
-    min-height: calc(100vh - 95px);
-    background-color: var(--white);
+    &-section {
+        min-height: calc(100vh - 95px);
+        background-color: var(--white);
+    }
 
     &__box {
         min-height: calc(100vh - 95px);
-    }
-
-    .h6 {
-        padding: 51px 0 50px;
+        max-width: 1290px;
     }
 
     &__txt {
         max-width: 531px;
     }
 
+    &__txt-footer {
+        margin-top: 25px;
+    }
+
+    &__txt-info {
+        margin-top: 51px;
+    }
+
     &__btn-box {
         max-width: 330px;
-        padding-bottom: 25px;
+        margin-top: 50px;
+        min-height: 60px;
+        height: 100%;
+
+        & :first-child {
+            padding: 0 44px 0 44px;
+            background-color: var(--deer_orange_400);
+            color: var(--white);
+            border: none;
+            margin-top: 5px;
+        }
+
+        & :last-child {
+            padding: 0 28px 0 28px;
+            margin-top: 5px;
+        }
+    }
+
+    &__img-box {
+        max-width: 759px;
+        width: 100%;
+        flex: 50%;
+    }
+
+    &-img {
+        width: 100%;
+        object-fit: contain;
     }
 }
+
 
 /* end main */
 
@@ -109,15 +159,21 @@ body {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        min-height: 455px;
+        min-height: calc(455px - $container-space * 2);
     }
 
     &__companies {
-        padding-top: 70px;
+        margin-top: 70px;
     }
 
     &__companies-img {
-        padding-right: 10px;
+        margin-right: 10px;
+        border-bottom: 3px solid transparent;
+        transition: border-bottom-color $transition;
+
+        &:hover {
+            border-bottom-color: var(--black);
+        }
     }
 }
 
@@ -127,11 +183,21 @@ body {
 
 .instruction {
     &__control {
-        padding-top: calc(90px - 20px);
+        margin-top: calc(90px - 20px);
     }
 
     &__less-work {
-        padding-bottom: 150px;
+        margin-bottom: 10vw;
+    }
+
+    &-img-box {
+        max-width: 632px;
+        width: 100%;
+    }
+
+    &-img {
+        width: 100%;
+        object-fit: contain;
     }
 }
 
@@ -141,15 +207,17 @@ body {
 
 .purpose {
     background-color: var(--pink_50);
-    min-height: calc(100vh - 95px);
+
+    &-inner {
+        flex-direction: column;
+        min-height: calc(100vh - $container-space * 2 - 95px);
+    }
 
     &__container {
-        min-height: 702px;
-        flex-direction: column;
-
-        & :last-child {
-            padding-bottom: 57px;
-        }
+        min-height: 645px;
+        display: flex;
+        gap: 108px;
+        margin-top: 58px;
     }
 }
 
@@ -160,23 +228,34 @@ body {
 .productivity {
     min-height: calc(100vh - 95px);
 
+    &-cont {
+        flex-direction: column;
+        gap: 25px;
+        min-height: calc(100vh - $container-space * 2 - 95px);
+    }
+
     &__box {
         max-width: 409px;
-        padding-bottom: 120px;
     }
 
     &__box-txt {
         min-height: 240px;
         height: 100%;
-        padding: 34px 0 25px;
+        margin: 34px 0 25px;
     }
 
     &__box-img {
-        min-height: 204px;
-        height: 100%;
+        height: 183px;
         margin-bottom: 46px;
         display: flex;
         align-items: center;
+        max-width: 179px;
+    }
+
+    &__img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
     }
 
     &__link {
@@ -197,26 +276,37 @@ body {
     background-color: var(--blue_200);
     min-height: 468px;
 
-    .container {
-        min-height: 468px;
-        display: flex;
-        align-items: center;
-    }
-
     &__box {
         width: 100%;
+        min-height: calc(468px - $container-space * 2);
         display: flex;
-        justify-content: space-between
+        justify-content: space-between;
+        align-items: center;
     }
 
     &__h5 {
         @include txt (normal, 30px, 40px);
-        padding-bottom: 23px;
+        margin-bottom: 23px;
     }
 
     &__txt {
         max-width: 921px;
         margin-bottom: 20px;
+    }
+
+    &-img-txt {
+        max-width: 115px;
+        width: 100%;
+        margin-top: 7px;
+    }
+
+    &-img-box {
+        max-width: 310px;
+    }
+
+    &-img {
+        width: 100%;
+        object-fit: contain;
     }
 }
 
@@ -230,7 +320,7 @@ body {
 
     &__container {
         display: flex;
-        min-height: 332px;
+        min-height: calc(332px - $container-space * 2);
     }
 
     &__box {
@@ -258,7 +348,7 @@ body {
     min-height: calc(100vh - 95px);
 
     &__container {
-        min-height: calc(100vh - 95px);
+        min-height: calc(100vh - $container-space * 2 - 95px);
         flex-direction: column;
         padding-bottom: 20px;
 
@@ -271,16 +361,26 @@ body {
         }
     }
 
+    &__img-box {
+        max-width: 1023px;
+        margin-top: 25px;
+    }
+
     &__img {
         padding: 25px 0 32px;
+        width: 100%;
+        object-fit: contain;
     }
 
     &__btn {
-        max-width: 193px;
-        width: 100%;
+        padding: 0 40px 0 40px;
         min-height: 60px;
         height: 100%;
         transition: $transition;
+        background-color: var(--deer_orange_400);
+        color: var(--white);
+        border: none;
+        margin-top: 32px;
 
         &:hover {
             box-shadow: 7px 3px 3px 3px #e3cccc;
@@ -297,18 +397,17 @@ body {
     min-height: 603px;
 
     &__box {
-        min-height: 603px;
+        min-height: calc(603px - $container-space * 2);
         flex-direction: column;
     }
 
     &__txt {
         text-align: center;
-        padding-bottom: 29px;
+        margin-bottom: 29px;
     }
 
     &__btn {
-        max-width: 160px;
-        width: 100%;
+        padding: 0 50px 0 50px;
         min-height: 60px;
         height: 100%;
         background-color: var(--black);
@@ -331,19 +430,25 @@ body {
     min-height: 900px;
 
     &__container {
-        min-height: 900px;
+        min-height: calc(900px - $container-space * 2);
     }
 
     &__studies {
         max-width: 300px;
     }
 
+    &__studies-img-box {
+        margin: 28px 0 31px;
+        max-width: 300px;
+    }
+
     &__studies-img {
-        padding: 28px 0 31px;
+        width: 100%;
+        object-fit: contain;
     }
 
     &__studies-txt {
-        padding: 11px 0 15px;
+        margin: 11px 0 15px;
     }
 
     &__links {
@@ -354,35 +459,54 @@ body {
 
     &__contents {
         @include txt (600, 20px, 25px);
-        padding-bottom: 21px;
+        margin-bottom: 21px;
+    }
+
+    &__top {
+        min-height: calc(682px + 92px);
+        margin-top: 92px;
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid var(--black);
+    }
+
+    &-nav {
+        gap: 15px;
+        display: flex;
+        flex-direction: column;
     }
 
 }
 
-.footer-top {
-    min-height: calc(682px + 92px);
-    padding-top: 92px;
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid var(--black);
-}
-
-.footer-nav {
-    gap: 15px;
-    display: flex;
-    flex-direction: column;
-}
-
 .footer-bottom {
-    min-height: 106px;
+    min-height: 86px;
 
     & :first-child {
         display: flex;
     }
+
+    &__img-box {
+        max-width: 90px;
+        width: 100%;
+        border-bottom: 3px solid transparent;
+        transition: border-bottom-color $transition;
+        margin-top: 10px;
+
+        &:hover {
+            border-bottom-color: var(--black);
+        }
+    }
+
+    &__img {
+        width: 100%;
+        object-fit: contain;
+    }
+
+    &__txt {
+        margin: 10px 0 0 14px;
+    }
 }
 
-.footer-txt {
-    padding-left: 14px;
-}
+
 
 /* end footer */

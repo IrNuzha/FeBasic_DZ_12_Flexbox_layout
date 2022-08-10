@@ -3,7 +3,7 @@
 .container {
     max-width: calc($container-size + $container-space * 2);
     margin: 0 auto;
-    padding: 20px 0 0 20px;
+    padding: 20px 20px 20px 20px;
 }
 
 .flex-cont {
@@ -21,20 +21,12 @@
 .btn {
     background-color: transparent;
     @include txt (600, 16px, 0px);
-    max-width: 160px;
-    width: 100%;
     min-height: 60px;
     transition: $transition;
 
     &:hover {
         box-shadow: 7px 3px 3px 3px #e3cccc;
     }
-}
-
-.try-btn {
-    background-color: var(--deer_orange_400);
-    color: var(--white);
-    border: none;
 }
 
 .flexible {
@@ -48,11 +40,11 @@
 }
 
 .instruction-distance {
-    padding-bottom: $distance;
+    margin-bottom: 17vw;
 }
 
 .gap {
-    padding: $gap 0;
+    margin: $gap 0;
 }
 
 .bold {
